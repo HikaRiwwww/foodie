@@ -3,8 +3,8 @@ spring:
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver # mysql驱动
     url: jdbc:mysql://${DB_HOST:192.168.50.108}:${DB_PORT:3306}/foodie-shop-dev?useUnicode=true&characterEncoding=UTF-8&autoReconnect=TRUE
-    username: root
-    password: 123
+    username: ${DB_USER:root}
+    password: ${DB_PASSWORD:123}
 
     hikari:
       connection-timeout: 30000

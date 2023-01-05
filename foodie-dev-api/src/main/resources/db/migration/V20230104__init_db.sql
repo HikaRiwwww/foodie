@@ -1781,27 +1781,6 @@ INSERT INTO `orders` VALUES ('190830BZ5B5R7KWH', '1908189H7TNWDTXP', 'jack', '13
 COMMIT;
 
 -- ----------------------------
--- Table structure for stu
--- ----------------------------
-DROP TABLE IF EXISTS `stu`;
-CREATE TABLE `stu` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL,
-  `age` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1221 DEFAULT CHARSET=utf8mb4;
-
--- ----------------------------
--- Records of stu
--- ----------------------------
-BEGIN;
-INSERT INTO `stu` VALUES (1203, 'parent', 19);
-INSERT INTO `stu` VALUES (1205, 'parent', 19);
-INSERT INTO `stu` VALUES (1209, 'parent', 19);
-INSERT INTO `stu` VALUES (1211, 'parent', 19);
-COMMIT;
-
--- ----------------------------
 -- Table structure for user_address
 -- ----------------------------
 DROP TABLE IF EXISTS `user_address`;
