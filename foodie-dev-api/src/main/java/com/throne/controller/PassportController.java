@@ -80,6 +80,13 @@ public class PassportController {
         return CommonResp.ok(user);
     }
 
+    @ApiOperation(value = "用户注销", notes = "用户注销", httpMethod = "POST")
+    @PostMapping("/logout")
+    public CommonResp logout(@RequestParam String userId, HttpServletRequest request, HttpServletResponse response){
+        CookieUtils.deleteCookie(request, response, "user");
+        return CommonResp.ok();
+    }
+
     private Users setNullProperty(Users user){
         user.setRealname(null);
         user.setPassword(null);
