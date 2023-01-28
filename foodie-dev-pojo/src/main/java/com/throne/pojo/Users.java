@@ -1,11 +1,16 @@
 package com.throne.pojo;
 
-import java.util.Date;
+
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+
+import java.time.LocalDateTime;
 
 public class Users {
     /**
      * 主键id 用户id
      */
+    @TableId(type = IdType.ASSIGN_ID)
     private String id;
 
     /**
@@ -51,17 +56,17 @@ public class Users {
     /**
      * 生日 生日
      */
-    private Date birthday;
+    private LocalDateTime birthday;
 
     /**
      * 创建时间 创建时间
      */
-    private Date createdTime;
+    private LocalDateTime createdTime;
 
     /**
      * 更新时间 更新时间
      */
-    private Date updatedTime;
+    private LocalDateTime updatedTime;
 
     /**
      * 获取主键id 用户id
@@ -230,7 +235,7 @@ public class Users {
      *
      * @return birthday - 生日 生日
      */
-    public Date getBirthday() {
+    public LocalDateTime getBirthday() {
         return birthday;
     }
 
@@ -239,7 +244,7 @@ public class Users {
      *
      * @param birthday 生日 生日
      */
-    public void setBirthday(Date birthday) {
+    public void setBirthday(LocalDateTime birthday) {
         this.birthday = birthday;
     }
 
@@ -248,7 +253,7 @@ public class Users {
      *
      * @return created_time - 创建时间 创建时间
      */
-    public Date getCreatedTime() {
+    public LocalDateTime getCreatedTime() {
         return createdTime;
     }
 
@@ -257,7 +262,7 @@ public class Users {
      *
      * @param createdTime 创建时间 创建时间
      */
-    public void setCreatedTime(Date createdTime) {
+    public void setCreatedTime(LocalDateTime createdTime) {
         this.createdTime = createdTime;
     }
 
@@ -266,7 +271,7 @@ public class Users {
      *
      * @return updated_time - 更新时间 更新时间
      */
-    public Date getUpdatedTime() {
+    public LocalDateTime getUpdatedTime() {
         return updatedTime;
     }
 
@@ -275,7 +280,7 @@ public class Users {
      *
      * @param updatedTime 更新时间 更新时间
      */
-    public void setUpdatedTime(Date updatedTime) {
+    public void setUpdatedTime(LocalDateTime updatedTime) {
         this.updatedTime = updatedTime;
     }
 }
