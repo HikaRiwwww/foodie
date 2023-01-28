@@ -1,12 +1,12 @@
 package com.throne.controller;
 
-import com.throne.UsersService;
+import com.throne.service.UsersService;
 import com.throne.pojo.Users;
 import com.throne.pojo.bo.UserBO;
-import com.throne.utils.CommonResp;
-import com.throne.utils.CookieUtils;
-import com.throne.utils.JsonUtils;
-import com.throne.utils.MD5Utils;
+import com.throne.common.utils.CommonResp;
+import com.throne.common.utils.CookieUtils;
+import com.throne.common.utils.JsonUtils;
+import com.throne.common.utils.MD5Utils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang3.StringUtils;
