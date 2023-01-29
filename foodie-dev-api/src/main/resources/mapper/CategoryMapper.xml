@@ -1,7 +1,41 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.throne.mapper.CategoryMapper" >
+<mapper namespace="com.throne.mapper.CategoryMapper">
+    <resultMap id="categoryVO" type="com.throne.pojo.vo.CategoryVO">
+        <result column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="type" property="type"/>
+        <result column="fatherId" property="fatherId"/>
+        <collection property="subCategoryVOList" ofType="com.throne.pojo.vo.SubCategoryVO">
+            <result column="subFatherId" property="subFatherId"/>
+            <result column="subType" property="subType"/>
+            <result column="subName" property="subName"/>
+            <result column="subId" property="subId"/>
+        </collection>
+    </resultMap>
+
     <select id="queryAll" resultType="com.throne.pojo.Carousel">
-        select * from carousel where is_show = #{is_show} order by sort
+        select *
+        from carousel
+        where is_show = #{is_show}
+        order by sort
+    </select>
+    <select id="queryRootCategory" resultType="com.throne.pojo.Category">
+        select *
+        from category
+        where type = 1;
+    </select>
+    <select id="querySubCategory" parameterType="int" resultMap="categoryVO">
+        select f.id        as id,
+               f.name      as name,
+               f.type      as type,
+               f.father_id as fatherId,
+               c.id        as subId,
+               c.name      as subName,
+               c.type      as subType,
+               c.father_id as subFatherId
+        from category f
+                 left join category c on f.id = c.father_id
+        where f.father_id = #{rootCatId};
     </select>
 </mapper>
